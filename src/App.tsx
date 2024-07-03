@@ -174,7 +174,7 @@ function App() {
         )}
         <br />
         <p>
-          <strong>AI Summary:</strong> {aiSummary}
+          <strong>AI Summary:</strong> {aiSummary || 'Summary unavailable'}
         </p>
         <p>Here are the transaction details:</p>
         <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
@@ -191,7 +191,7 @@ function App() {
                     }}
                   >
                     <p>
-                      <strong>Transaction ID:</strong> {transaction.signature}
+                      <strong>Transaction hash:</strong> {transaction.signature}
                     </p>
                     <p>
                       <strong>Description:</strong> {transaction.description}
@@ -219,7 +219,7 @@ function App() {
                     }}
                   >
                     <p>
-                      <strong>Transaction ID:</strong> {transaction.signature}
+                      <strong>Transaction hash:</strong> {transaction.signature}
                     </p>
                     <p>
                       <strong>Description:</strong> {transaction.description}

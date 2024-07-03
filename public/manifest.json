@@ -21,7 +21,11 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://solana.fm/*", "*://solscan.io/*"],
+      "matches": [
+        "*://solana.fm/*",
+        "*://solscan.io/*",
+        "*://explorer.solana.com/*"
+      ],
       "js": ["content.js"],
       "run_at": "document_end"
     }
@@ -40,6 +44,6 @@
   "host_permissions": [
     "*://solana.fm/*",
     "*://solscan.io/*",
-    "*://example.com/*"
+    "*://explorer.solana.com/*"
   ]
 }

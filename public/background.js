@@ -7,12 +7,16 @@ chrome.tabs.onActivated.addListener(async (activeInfo) => {
   const solscanTxPattern = /solscan\.io\/tx\/(.+)/;
   const solanaFmAccountPattern = /solana\.fm\/address\/(.+)\/transactions/;
   const solanaFmTxPattern = /solana\.fm\/tx\/(.+)/;
+  const solanaExplorerAccountPattern = /explorer\.solana\.com\/address\/(.+)/;
+  const solanaExplorerTxPattern = /explorer\.solana\.com\/tx\/(.+)/;
 
   let match =
     url.href.match(solscanAccountPattern) ||
     url.href.match(solscanTxPattern) ||
     url.href.match(solanaFmAccountPattern) ||
-    url.href.match(solanaFmTxPattern);
+    url.href.match(solanaFmTxPattern) ||
+    url.href.match(solanaExplorerAccountPattern) ||
+    url.href.match(solanaExplorerTxPattern);
 
   if (match) {
     const data = {
