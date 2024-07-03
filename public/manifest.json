@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Solana Explorer Extension",
+  "version": "1.0.0",
+  "description": "AI-powered browser extension that integrates with existing blockchain explorers like Solana.fm and Solscan to understand the context of an account and present information in a more user-friendly and intuitive manner",
+  "author": "dera@ieee.org",
+  "icons": {
+    "16": "extension-icon.jpg",
+    "32": "extension-icon.jpg",
+    "48": "extension-icon.jpg",
+    "128": "extension-icon.jpg"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "extension-icon.jpg",
+      "32": "extension-icon.jpg",
+      "48": "extension-icon.jpg",
+      "128": "extension-icon.jpg"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://solana.fm/*", "*://solscan.io/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "scripting",
+    "tabs",
+    "activeTab",
+    "contextMenus",
+    "webRequest",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "*://solana.fm/*",
+    "*://solscan.io/*",
+    "*://example.com/*"
+  ]
+}
